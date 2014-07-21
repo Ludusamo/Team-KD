@@ -5,7 +5,7 @@ public class NetworkManager : MonoBehaviour {
 
 	// Name attributes for the server
 	private const string typeName = "UniqueGameName";
-	private const string gameName = "Brendan's Room";
+	private const string gameName = "Kevin's Room";
 	private RoomInfo[] roomsList;
 
 	// Player prefab that will be spawned in
