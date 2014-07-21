@@ -105,6 +105,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: af8631439dce10741a4ecb8fee28f072, type: 2}
   - {fileID: 100000, guid: 799621b693a48e744b347e4a04ceb26c, type: 2}
   - {fileID: 100000, guid: f123c8232c65ed54e9a179566bd0e225, type: 2}
+  - {fileID: 100000, guid: ff4dbeedd94d89c43918d94d6511177f, type: 2}
+  - {fileID: 100000, guid: fc0c4e55f91d00244894f8e592d708fd, type: 2}
+  - {fileID: 100000, guid: 93e759b5f8626c14f8c2a86e2a307f4b, type: 2}
+  - {fileID: 100000, guid: 4f45399f5c33f69488dddfb6dad3c529, type: 2}
+  - {fileID: 100000, guid: b89fe8813e3138c48a9c3624360ae096, type: 2}
+  - {fileID: 100000, guid: cb2ca04d57eb12d48a8fdc14ba409691, type: 2}
   cards:
   - {fileID: 0}
   - {fileID: 0}

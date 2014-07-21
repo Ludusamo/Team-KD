@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 		for (int i = 0; i < cards.Length; i++) {
 			//creates a random card
 			GameObject clonedCard;
-			clonedCard = Instantiate (cardlist[Random.Range (0,3)]) as GameObject;
+			clonedCard = Instantiate (cardlist[Random.Range (0,9)]) as GameObject;
 			//sets each of the three card slots in the player's hand as a random card
 			cards[i] = clonedCard;
 			//places the cards in their corresponding positions on the scene
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 	public void changeCard(int cardslot) {
 		//creates a random card
 		GameObject clonedCard;
-		clonedCard = Instantiate (cardlist[Random.Range (0,3)]) as GameObject;
+		clonedCard = Instantiate (cardlist[Random.Range (0,9)]) as GameObject;
 		//sets each of the three card slots in the player's hand as a random card
 		cards[cardslot] = clonedCard;
 		//places the cards in their corresponding positions on the scene
