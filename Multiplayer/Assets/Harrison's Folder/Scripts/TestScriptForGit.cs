@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TestScriptForGit : MonoBehaviour {
 
+	// Test for git
 	// Use this for initialization
 	void Start () {
 	
