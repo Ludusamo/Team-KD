@@ -18,6 +18,8 @@ public class InteractCard : MonoBehaviour {
 			transform.position = new Vector3 (0, 0, 0);
 			//changes the card at the card position of the clicked card to a new random card
 			omni.GetComponent<Player> ().changeCard (cardplace);
+			//adds more stolen gold
+			omni.GetComponent<RoomGUI>().stealGold(value);
 			//deletes the previous card played
 			playedcard = GameObject.FindGameObjectWithTag ("playedCard");
 			if (playedcard != null)
