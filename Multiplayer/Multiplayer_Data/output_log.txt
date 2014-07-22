@@ -12,7 +12,11 @@ Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data
 Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.195 seconds
+<<<<<<< HEAD
+- Completed reload, in  0.186 seconds
+=======
+- Completed reload, in  0.209 seconds
+>>>>>>> origin/Brendan's-Branch
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
