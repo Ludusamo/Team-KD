@@ -45,11 +45,11 @@ public class NetworkManager : MonoBehaviour {
 		GUI.Box (new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20), Screen.width / 4, Screen.height / 10), "Available Server");
 		if (roomsList != null) {
 			for (int i = 0; i < roomsList.Length; i++) {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20) + ((Screen.height / 10) * (i + 1)), Screen.width / 4, Screen.height / 10), "Join " + roomsList[i].name + " " + roomsList[i].playerCount + "/" + roomsList[i].maxPlayers))
-=======
+//=======
 				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20) + ((Screen.height / 10) * (i + 1)), Screen.width / 4, Screen.height / 10), "Join " + roomsList[i].name))
->>>>>>> ProjectKD/master
+//>>>>>>> ProjectKD/master
 					PhotonNetwork.JoinRoom(roomsList[i].name);
 			}
 		}
