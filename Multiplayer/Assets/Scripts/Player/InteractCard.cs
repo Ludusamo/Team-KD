@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InteractCard : MonoBehaviour {
+public class InteractCard : Photon.MonoBehaviour {
 	public GameObject omni, GUIOmni, playedcard;
 	public int cardplace, value;
 	private bool played, moveit;
@@ -21,6 +21,7 @@ public class InteractCard : MonoBehaviour {
 		}
 	}
 
+	[RPC]
 	void cardPlayed() {
 		//changes the card at the card position of the clicked card to a new random card
 		omni.GetComponent<Player> ().changeCard (cardplace);
