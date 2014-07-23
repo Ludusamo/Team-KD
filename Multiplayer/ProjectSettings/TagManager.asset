@@ -4,7 +4,10 @@
 TagManager:
   tags:
   - playedCard
+<<<<<<< HEAD
   - GUI
+=======
+>>>>>>> origin/harrisonbranch
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
