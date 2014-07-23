@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : Photon.MonoBehaviour {
 	public GameObject[] cardlist;
 	public GameObject[] cards;
 	public bool onTurn;
