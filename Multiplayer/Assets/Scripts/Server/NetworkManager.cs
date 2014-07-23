@@ -44,10 +44,13 @@ public class NetworkManager : MonoBehaviour {
 		roomsList = PhotonNetwork.GetRoomList();
 	}
 
+	void OnCreatedRoom() {
+		PhotonNetwork.Instantiate (roomGUIPrefab.name, Vector3.zero, Quaternion.identity, 0);
+	}
+
 	void OnJoinedRoom() {
 		if (firstStartUp) {
 			GameObject clone = (GameObject) Instantiate (playerPrefab, Vector3.zero, Quaternion.identity);
-			GameObject clone1 = (GameObject) Instantiate (roomGUIPrefab, Vector3.zero, Quaternion.identity);
 			Debug.Log("Hi");
 			firstStartUp = false;
 		}

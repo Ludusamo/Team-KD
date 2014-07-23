@@ -26,7 +26,7 @@ public class InteractCard : Photon.MonoBehaviour {
 		//changes the card at the card position of the clicked card to a new random card
 		omni.GetComponent<Player> ().changeCard (cardplace);
 		//adds more stolen gold
-		GUIOmni.GetComponent<RoomGUI>().stealGold(value);
+		GUIOmni.GetComponent<RoomGUI>().GetComponent<PhotonView>().RPC ("stealGold", PhotonTargets.AllBufferedViaServer, value);
 		//deletes the previous card played
 		playedcard = GameObject.FindGameObjectWithTag ("playedCard");
 		if (playedcard != null)
