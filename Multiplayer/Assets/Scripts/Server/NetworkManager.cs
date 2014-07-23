@@ -10,6 +10,7 @@ public class NetworkManager : MonoBehaviour {
 
 	// Player prefab that will be spawned in
 	public GameObject playerPrefab;
+	public GameObject roomGUIPrefab;
 	private bool joinRoom;
 
 	// Calls on startup
@@ -38,9 +39,12 @@ public class NetworkManager : MonoBehaviour {
 	void OnReceivedRoomListUpdate() {
 		roomsList = PhotonNetwork.GetRoomList();
 	}
+
 	void OnJoinedRoom() {
-		PhotonNetwork.Instantiate(playerPrefab.name, Vector3.up * 5, Quaternion.identity, 0);
+		PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity, 0);
+		PhotonNetwork.Instantiate(roomGUIPrefab.name, Vector3.zero, Quaternion.identity, 0);
 	}
+
 	void listRooms() {
 		GUI.Box (new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20), Screen.width / 4, Screen.height / 10), "Available Server");
 		if (roomsList != null) {

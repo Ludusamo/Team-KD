@@ -2,13 +2,14 @@
 using System.Collections;
 
 public class InteractCard : MonoBehaviour {
-	public GameObject omni, playedcard;
+	public GameObject omni, GUIOmni, playedcard;
 	public int cardplace, value;
 	private bool played, moveit;
 
 	// Use this for initialization
 	void Start () {
 		omni = GameObject.FindGameObjectWithTag ("Player");
+		GUIOmni = GameObject.FindGameObjectWithTag ("GUI");
 		played = false;
 	}
 
@@ -24,7 +25,7 @@ public class InteractCard : MonoBehaviour {
 		//changes the card at the card position of the clicked card to a new random card
 		omni.GetComponent<Player> ().changeCard (cardplace);
 		//adds more stolen gold
-		omni.GetComponent<RoomGUI>().stealGold(value);
+		GUIOmni.GetComponent<RoomGUI>().stealGold(value);
 		//deletes the previous card played
 		playedcard = GameObject.FindGameObjectWithTag ("playedCard");
 		if (playedcard != null)

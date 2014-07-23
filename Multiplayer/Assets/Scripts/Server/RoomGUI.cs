@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class RoomGUI : MonoBehaviour {
+public class RoomGUI : Photon.MonoBehaviour {
 	public int stolengold;
 	private ArrayList playerInfos;	// Arraylist of player info 
 	private bool shouldCreateLegend;	// boolean to whether the legend should appear
@@ -84,7 +84,7 @@ public class RoomGUI : MonoBehaviour {
 
 	void displayHeading() {
 		GUI.Label (new Rect (2 * legendPadding, legendPadding, legendLabelWidth, legendLabelHeight), "Name");
-		GUI.Label (new Rect (2 * legendPadding + legendLabelWidth, legendPadding, legendLabelWidth, legendLabelHeight), "Gold");
+		GUI.Label (new Rect (2 * legendPadding + legendLabelWidth, legendPadding, legendLabelWidth, legendLabelHeight), "Gold\t");
 		GUI.Label (new Rect (2 * legendPadding + legendLabelWidth * 2, legendPadding, legendLabelWidth, legendLabelHeight), "Lives");
 	}
 }
