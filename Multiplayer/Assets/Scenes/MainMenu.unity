@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928a2f3f69fe2194e90ae97e8d3494e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 100000, guid: 13e66c4629e59574c92083cf2b9e14b7, type: 2}
-  roomGUIPrefab: {fileID: 0}
+  playerPrefab: {fileID: 100000, guid: 255209bc9b3ef084cbc13b04ef047486, type: 2}
+  roomGUIPrefab: {fileID: 100000, guid: af01767510ee84845a50c3383dad9bfb, type: 2}
 --- !u!4 &1988380150
 Transform:
   m_ObjectHideFlags: 0
