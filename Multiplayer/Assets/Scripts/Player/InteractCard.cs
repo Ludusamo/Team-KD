@@ -17,6 +17,7 @@ public class InteractCard : MonoBehaviour {
 		if (played == false) {
 			played = true;
 			//moves the card clicked to the center as if it was played
+			transform.position = new Vector3(transform.position.x,transform.position.y,-1);
 			moveit = true;
 		}
 	}
