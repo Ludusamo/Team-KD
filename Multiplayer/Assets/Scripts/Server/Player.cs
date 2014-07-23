@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : Photon.MonoBehaviour {
 	public GameObject[] cardlist;
 	public GameObject[] cards;
 	public bool onTurn;
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 			clonedCard.SendMessage("setCardPlace", i);
 		}
 	}
+
 
 	//Method changes the card in slot "cardslot" of the player's hand to a random card
 	public void changeCard(int cardslot) {

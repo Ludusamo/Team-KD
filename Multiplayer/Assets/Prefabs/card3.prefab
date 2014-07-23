@@ -53,7 +53,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   omni: {fileID: 0}
+  playedcard: {fileID: 0}
   cardplace: 0
+  value: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

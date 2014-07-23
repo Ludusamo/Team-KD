@@ -13,12 +13,20 @@ Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\As
 Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Completed reload, in  0.186 seconds
 =======
 - Completed reload, in  0.209 seconds
+>>>>>>> origin/Brendan's-Branch
+=======
+- Completed reload, in  0.227 seconds
 >>>>>>> origin/Brendan's-Branch
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\System.dll (this message is harmless)
+Hi
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

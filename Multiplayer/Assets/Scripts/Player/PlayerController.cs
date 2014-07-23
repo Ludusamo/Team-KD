@@ -8,9 +8,6 @@ public class PlayerController : Photon.MonoBehaviour {
 	void FixedUpdate() {
 		if (photonView.isMine) {
 			InputMovement();
-			//InputColorChange();
-		} else {
-			//SyncedMovement();
 		}
 	}
 
