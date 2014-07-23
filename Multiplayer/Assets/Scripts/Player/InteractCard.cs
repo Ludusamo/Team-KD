@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InteractCard : MonoBehaviour {
+public class InteractCard : Photon.MonoBehaviour {
 	public GameObject omni, GUIOmni, playedcard;
 	public int cardplace, value;
 	private bool played, moveit;
@@ -22,11 +22,12 @@ public class InteractCard : MonoBehaviour {
 		}
 	}
 
+	[RPC]
 	void cardPlayed() {
 		//changes the card at the card position of the clicked card to a new random card
 		omni.GetComponent<Player> ().changeCard (cardplace);
 		//adds more stolen gold
-		GUIOmni.GetComponent<RoomGUI>().stealGold(value);
+		GUIOmni.GetComponent<RoomGUI>().GetComponent<PhotonView>().RPC ("stealGold", PhotonTargets.AllBufferedViaServer, value);
 		//deletes the previous card played
 		playedcard = GameObject.FindGameObjectWithTag ("playedCard");
 		if (playedcard != null)

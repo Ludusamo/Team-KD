@@ -37,6 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: c1e71958786bec54181536245cbd8d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -50,6 +51,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
+=======
+>>>>>>> origin/Brendan's-Branch
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -62,6 +65,22 @@ MonoBehaviour:
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   instantiationId: -1
+<<<<<<< HEAD
+=======
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e71958786bec54181536245cbd8d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stolengold: 0
+  playerInfoPrefab: {fileID: 100000, guid: 1f131612f30a3b248be22ff9a885c9fb, type: 2}
+>>>>>>> origin/Brendan's-Branch
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
