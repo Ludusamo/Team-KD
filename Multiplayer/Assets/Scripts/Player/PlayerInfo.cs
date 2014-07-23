@@ -7,7 +7,8 @@ public class PlayerInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gold = lives = 0;
+		lives = 3;
+		gold = 0;
 		name = "TestName";
 	}
 	
