@@ -14,6 +14,7 @@ Platform assembly: C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data
 Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Completed reload, in  0.186 seconds
 =======
 - Completed reload, in  0.209 seconds
@@ -21,6 +22,9 @@ Loading C:\Users\Brendan\Desktop\Team-KD\Multiplayer\Multiplayer_Data\Managed\Ph
 =======
 - Completed reload, in  0.227 seconds
 >>>>>>> origin/Brendan's-Branch
+=======
+- Completed reload, in  0.204 seconds
+>>>>>>> Austin's-Branchv2
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.

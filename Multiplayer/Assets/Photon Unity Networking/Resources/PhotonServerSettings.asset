@@ -27,4 +27,5 @@ MonoBehaviour:
   - DestroyRpc
   - ChangeColorTo
   - cardPlayed
+  - stealGold
   DisableAutoOpenWizard: 0
