@@ -13,8 +13,11 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject roomGUIPrefab;
 	private bool joinRoom;
 
+	private bool firstStartUp;
+
 	// Calls on startup
 	void Start() {
+		firstStartUp = true;
 		joinRoom = false;
 		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
@@ -26,8 +29,9 @@ public class NetworkManager : MonoBehaviour {
 		}
 		else if (PhotonNetwork.room == null) {
 			if (!joinRoom) {
-				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.height / 10), (Screen.height / 2) - (Screen.height / 10), Screen.width / 10, Screen.height / 10), "Start Server"))
+				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.height / 10), (Screen.height / 2) - (Screen.height / 10), Screen.width / 10, Screen.height / 10), "Start Server")) {
 					PhotonNetwork.CreateRoom(gameName, true, true, 5);
+				}
 				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.height / 10), (Screen.height / 2) + (Screen.height / 10), Screen.width / 10, Screen.height / 10), "Join"))
 					joinRoom = true;
 			} else {
@@ -40,17 +44,33 @@ public class NetworkManager : MonoBehaviour {
 		roomsList = PhotonNetwork.GetRoomList();
 	}
 
+	void OnCreatedRoom() {
+		PhotonNetwork.Instantiate (roomGUIPrefab.name, Vector3.zero, Quaternion.identity, 0);
+	}
+
 	void OnJoinedRoom() {
-		PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity, 0);
-		PhotonNetwork.Instantiate(roomGUIPrefab.name, Vector3.zero, Quaternion.identity, 0);
+		if (firstStartUp) {
+			GameObject clone = (GameObject) Instantiate (playerPrefab, Vector3.zero, Quaternion.identity);
+			Debug.Log("Hi");
+			firstStartUp = false;
+		}
 	}
 
 	void listRooms() {
 		GUI.Box (new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20), Screen.width / 4, Screen.height / 10), "Available Server");
 		if (roomsList != null) {
 			for (int i = 0; i < roomsList.Length; i++) {
+<<<<<<< HEAD
+				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20) + ((Screen.height / 10) * (i + 1)), Screen.width / 4, Screen.height / 10), "Join " + roomsList[i].name + " " + roomsList[i].playerCount + "/" + roomsList[i].maxPlayers)) {
+=======
+//<<<<<<< HEAD
 				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20) + ((Screen.height / 10) * (i + 1)), Screen.width / 4, Screen.height / 10), "Join " + roomsList[i].name + " " + roomsList[i].playerCount + "/" + roomsList[i].maxPlayers))
+//=======
+				if (GUI.Button(new Rect((Screen.width / 2) - (Screen.width / 8), (Screen.height / 20) + ((Screen.height / 10) * (i + 1)), Screen.width / 4, Screen.height / 10), "Join " + roomsList[i].name))
+//>>>>>>> ProjectKD/master
+>>>>>>> origin/harrisonbranch
 					PhotonNetwork.JoinRoom(roomsList[i].name);
+				}
 			}
 		}
 		if (GUI.Button(new Rect(Screen.width / 20, Screen.height - (Screen.height / 10), Screen.width / 10, Screen.height / 20), "Back"))

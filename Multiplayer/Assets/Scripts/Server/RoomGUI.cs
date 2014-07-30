@@ -37,7 +37,7 @@ public class RoomGUI : Photon.MonoBehaviour {
 	}
 
 	//Method reacts when more gold is stolen, adding to the stolengold count
-	public void stealGold (int amount) {
+	[RPC] public void stealGold (int amount) {
 		stolengold += amount;
 	}
 

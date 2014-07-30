@@ -23,6 +23,7 @@ public class Player : Photon.MonoBehaviour {
 		}
 	}
 
+
 	//Method changes the card in slot "cardslot" of the player's hand to a random card
 	public void changeCard(int cardslot) {
 		//creates a random card
