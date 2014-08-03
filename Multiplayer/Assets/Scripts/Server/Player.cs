@@ -20,6 +20,7 @@ public class Player : Photon.MonoBehaviour {
 			clonedCard.transform.position = new Vector3(-3 + i * 3, -3, 0);
 			//cards set their position in the array in their own script in InteractCard
 			clonedCard.SendMessage("setCardPlace", i);
+			InteractCard.deleteCloneInName(clonedCard);
 		}
 	}
 
@@ -35,6 +36,7 @@ public class Player : Photon.MonoBehaviour {
 		clonedCard.transform.position = new Vector3(-3 + cardslot * 3, -3, 0);
 		//cards set their position in the array in their own script in InteractCard
 		clonedCard.SendMessage("setCardPlace", cardslot);
+		InteractCard.deleteCloneInName (clonedCard);
 	}
 
 	// Update is called once per frame

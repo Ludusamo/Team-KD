@@ -20,23 +20,17 @@ public class InteractCard : Photon.MonoBehaviour {
 			moveit = true;
 		}
 	}
-
-	[RPC]
 	void cardPlayed() {
 		//changes the card at the card position of the clicked card to a new random card
 		omni.GetComponent<Player> ().changeCard (cardplace);
 		//adds more stolen gold
-		GUIOmni.GetComponent<RoomGUI>().GetComponent<PhotonView>().RPC ("stealGold", PhotonTargets.AllBufferedViaServer, value);
+		GUIOmni.GetPhotonView().RPC ("stealGold", PhotonTargets.AllBufferedViaServer, value);
+		GUIOmni.GetPhotonView().RPC ("setCenter", PhotonTargets.MasterClient, gameObject.name);
 		//deletes the previous card played
-		playedcard = GameObject.FindGameObjectWithTag ("playedCard");
-		if (playedcard != null)
-			Destroy (playedcard);
-		//played cards have different properties from unplayed cards
-		transform.gameObject.tag = "playedCard";
-	}
-
-	// Update is called once per frame
-	void Update () {
+		//playedcard = GameObject.FindGameObjectWithTag ("playedCard");
+		//Destroy (playedcard);
+		//transform.gameObject.tag = "playedCard";
+		Destroy (gameObject);
 	}
 
 	void FixedUpdate() {
@@ -46,9 +40,9 @@ public class InteractCard : Photon.MonoBehaviour {
 			yTran = Time.fixedDeltaTime * (0 - transform.position.y) * 10;
 			transform.Translate (xTran, yTran, 0);
 			if (Mathf.Abs(0 - transform.position.x) < 0.1 && Mathf.Abs(0 - transform.position.y) < 0.1) {
-				transform.position = new Vector3(0,0,0);
+				transform.position = Vector3.zero;
 				moveit = false;
-				cardPlayed ();
+				cardPlayed();
 			}
 		}
 	}
@@ -56,6 +50,10 @@ public class InteractCard : Photon.MonoBehaviour {
 	//Method sets the cardplace variable to the given parameter "place"
 	void setCardPlace(int place) {
 		cardplace = place; 	
+	}
+
+	public static void deleteCloneInName(GameObject obj) {
+		obj.name = obj.name.Replace ("(Clone)", "");
 	}
 }
  

@@ -41,6 +41,16 @@ public class RoomGUI : Photon.MonoBehaviour {
 		stolengold += amount;
 	}
 
+	[RPC] public void setCenter(string name) {
+		GameObject currentCenter = GameObject.FindGameObjectWithTag ("playedCard");
+		if (currentCenter != null)
+			PhotonNetwork.Destroy (currentCenter.GetComponent<PhotonView>());
+		Destroy (currentCenter);
+		GameObject centerCard = PhotonNetwork.Instantiate (name, Vector3.zero, Quaternion.identity, 0);
+		InteractCard.deleteCloneInName (centerCard);
+		centerCard.tag = "playedCard";
+	}
+
 	//Entire in-game GUI
 	void OnGUI () {
 		GUI.BeginGroup (new Rect(0,0,Screen.width,Screen.height));
