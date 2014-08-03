@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class RoomGUI : Photon.MonoBehaviour {
-	public int stolengold;
-	private ArrayList playerInfos;	// Arraylist of player info 
 	private bool shouldCreateLegend;	// boolean to whether the legend should appear
 	private int legendPadding;	// Padding for the borders of the legend
 	private int legendLabelHeight;
@@ -14,8 +12,6 @@ public class RoomGUI : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		stolengold = 0;
-		playerInfos = new ArrayList ();
 		shouldCreateLegend = false;
 		legendLabelWidth = Screen.width / 3;
 		legendLabelHeight = Screen.height / 12;
@@ -36,50 +32,30 @@ public class RoomGUI : Photon.MonoBehaviour {
 		}
 	}
 
-	//Method reacts when more gold is stolen, adding to the stolengold count
-	[RPC] public void stealGold (int amount) {
-		stolengold += amount;
-	}
-
-	[RPC] public void setCenter(string name) {
-		GameObject currentCenter = GameObject.FindGameObjectWithTag ("playedCard");
-		if (currentCenter != null)
-			PhotonNetwork.Destroy (currentCenter.GetComponent<PhotonView>());
-		Destroy (currentCenter);
-		GameObject centerCard = PhotonNetwork.Instantiate (name, Vector3.zero, Quaternion.identity, 0);
-		InteractCard.deleteCloneInName (centerCard);
-		centerCard.tag = "playedCard";
-	}
-
 	//Entire in-game GUI
 	void OnGUI () {
 		GUI.BeginGroup (new Rect(0,0,Screen.width,Screen.height));
 		//GUI.skin = customskin;
-		GUI.Label (new Rect (Screen.width/2 + 100, Screen.height/2, 100, 100), "Gold Stolen: " + stolengold);
 		if (shouldCreateLegend) {
 			createLegend();
 		}
 		GUI.EndGroup ();
 	}
 
-	// Add a new playerInfo
-	void newInfo(GameObject player) {
-		playerInfos.Add (player);
-	}
-
 	// Creates the legend for all the player info
 	void createLegend() {
 		GUI.Box (new Rect (legendPadding, legendPadding, Screen.width - 2 * legendPadding, Screen.height - 2 * legendPadding), ""); 
 		displayHeading ();
-		for(int i = 0; i < playerInfos.Count; i++) {
-			displayInfo((GameObject)playerInfos[i],i);
+		GameObject masterGUI = GameObject.FindGameObjectWithTag ("MasterGUI");
+		for(int i = 0; i < masterGUI.GetComponent<MasterGUI>().getPlayerInfos().Count; i++) {
+			displayInfo((GameObject)masterGUI.GetComponent<MasterGUI>().getPlayerInfos()[i],i);
 		}
 	}
 
 	void createTestPlayerInfo() {
 		for (int i = 0; i < 10; i++) {
 			GameObject clone = Instantiate (playerInfoPrefab) as GameObject;
-			newInfo (clone);
+			//newInfo (clone);
 		}
 	}
 

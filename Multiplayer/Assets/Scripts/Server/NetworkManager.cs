@@ -5,7 +5,7 @@ public class NetworkManager : MonoBehaviour {
 
 	// Name attributes for the server
 	private const string typeName = "UniqueGameName";
-	private const string gameName = "Test Room";
+	private const string gameName = "Test' Room";
 	private RoomInfo[] roomsList;
 
 	// Player prefab that will be spawned in
@@ -46,12 +46,13 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnCreatedRoom() {
 		PhotonNetwork.Instantiate (roomGUIPrefab.name, Vector3.zero, Quaternion.identity, 0);
+		if (PhotonNetwork.isMasterClient)
+			PhotonNetwork.Instantiate ("MasterGUI", Vector3.zero, Quaternion.identity, 0);
 	}
 
 	void OnJoinedRoom() {
 		if (firstStartUp) {
 			GameObject clone = (GameObject) Instantiate (playerPrefab, Vector3.zero, Quaternion.identity);
-			Debug.Log("Hi");
 			firstStartUp = false;
 		}
 	}
