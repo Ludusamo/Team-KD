@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PhotonHashTable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviour {
 
@@ -54,6 +55,11 @@ public class NetworkManager : MonoBehaviour {
 		if (firstStartUp) {
 			GameObject clone = (GameObject) Instantiate (playerPrefab, Vector3.zero, Quaternion.identity);
 			firstStartUp = false;
+			PhotonHashTable prop = new PhotonHashTable();
+			prop.Add("Gold", 0);
+			prop.Add ("Name", "testName");
+			prop.Add ("Lives", 3);
+			PhotonNetwork.player.SetCustomProperties(prop);
 		}
 	}
 

@@ -35,6 +35,11 @@ public class MasterGUI : Photon.MonoBehaviour {
 		stolengold += amount;
 	}
 
+	[RPC] public void addPlayer (GameObject player) {
+		//print ("Added a player.");
+		//playerInfos.Add (player);
+	}
+
 	public ArrayList getPlayerInfos() {
 		return playerInfos;
 	}

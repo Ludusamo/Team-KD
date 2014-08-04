@@ -29,4 +29,5 @@ MonoBehaviour:
   - cardPlayed
   - stealGold
   - setCenter
+  - addPlayer
   DisableAutoOpenWizard: 0

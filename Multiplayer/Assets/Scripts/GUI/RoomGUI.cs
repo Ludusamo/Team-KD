@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using PhotonHashTable = ExitGames.Client.Photon.Hashtable;
 
 public class RoomGUI : Photon.MonoBehaviour {
 	private bool shouldCreateLegend;	// boolean to whether the legend should appear
@@ -16,7 +17,6 @@ public class RoomGUI : Photon.MonoBehaviour {
 		legendLabelWidth = Screen.width / 3;
 		legendLabelHeight = Screen.height / 12;
 		legendPadding = 14;
-		createTestPlayerInfo ();
 	}
 	
 	// Update is called once per frame
@@ -47,24 +47,17 @@ public class RoomGUI : Photon.MonoBehaviour {
 		GUI.Box (new Rect (legendPadding, legendPadding, Screen.width - 2 * legendPadding, Screen.height - 2 * legendPadding), ""); 
 		displayHeading ();
 		GameObject masterGUI = GameObject.FindGameObjectWithTag ("MasterGUI");
-		for(int i = 0; i < masterGUI.GetComponent<MasterGUI>().getPlayerInfos().Count; i++) {
-			displayInfo((GameObject)masterGUI.GetComponent<MasterGUI>().getPlayerInfos()[i],i);
+		for(int i = 0; i < PhotonNetwork.playerList.Length; i++) {
+			displayInfo(PhotonNetwork.playerList[i], i);
 		}
 	}
 
-	void createTestPlayerInfo() {
-		for (int i = 0; i < 10; i++) {
-			GameObject clone = Instantiate (playerInfoPrefab) as GameObject;
-			//newInfo (clone);
-		}
-	}
-
-	void displayInfo(GameObject playerInfo,  int spacingValue) {
-		PlayerInfo info = playerInfo.GetComponent<PlayerInfo> ();
+	void displayInfo(PhotonPlayer player,  int spacingValue) {
+		PhotonHashTable info = player.customProperties;
 		int newSpaceValue = spacingValue + 2;
-		GUI.Label(new Rect(2*legendPadding, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), info.name);
-		GUI.Label(new Rect(2*legendPadding + legendLabelWidth, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), "" + info.gold);
-		GUI.Label(new Rect(2*legendPadding + 2*legendLabelWidth, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), "" + info.lives);
+		GUI.Label(new Rect(2 * legendPadding, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), (string) info["Name"]);
+		GUI.Label(new Rect(2 * legendPadding + legendLabelWidth, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), "" + (int) info["Gold"]);
+		GUI.Label(new Rect(2 * legendPadding + 2 * legendLabelWidth, legendPadding * newSpaceValue + legendPadding, legendLabelWidth, legendLabelHeight), "" + (int) info["Lives"]);
 
 	}
 
